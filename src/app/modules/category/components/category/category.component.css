@@ -1,0 +1,18 @@
+table{
+    width: 100%;
+}
+
+ul li{
+    list-style: none;
+}
+.alinear{
+    text-align: center;
+    margin-top: 20px;
+}
+mat-form-field{
+    width: 140%;
+}
+.math-cell:nth-child(1),
+.math-header-cell:nth-cell(1){
+    flex: 0 0 6%;
+}
