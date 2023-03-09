@@ -12,7 +12,8 @@ import { NewCategoryComponent } from '../new-category/new-category.component';
 })
 export class CategoryComponent implements OnInit{
   constructor(private categoryService: CategoryService,
-    public dialog: MatDialog, private snackBar: MatSnackBar){
+    public dialog: MatDialog, private snackBar: MatSnackBar,
+    ){
 
   }
   //metodo de carga
@@ -66,6 +67,20 @@ export class CategoryComponent implements OnInit{
       return this.snackBar.open(message, action, {
         duration: 2000
       })
+  }
+  edit(id:number, name:string, description: string){
+    const dialogRef = this.dialog.open(NewCategoryComponent,{
+      width: '450px',
+      data: {id: id, name: name, description: description}
+    });
+    dialogRef.afterClosed().subscribe((result:any)=>{
+      if(result == 1){
+        this.openSnackBar("Categoría agregada", "Exitosa")
+        this.getCategories()
+      }else if(result ==2){
+        this.openSnackBar("Se produjo un error al guardar la categoría", "Error")
+      }
+    })
   }
 
 }
