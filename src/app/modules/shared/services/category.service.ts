@@ -28,9 +28,22 @@ export class CategoryService {
     const endPoint = `${base_uri}/categories`
     return this.http.post(endPoint, body)
   }
+
+  /**
+   * new information update
+   * @param body 
+   * @param id 
+   * @returns 
+   */
   updateCategories(body: any, id: any){
     const endPoint = `${base_uri}/categories/${id}`
     return this.http.put(endPoint, body)
   }
+
+  deleteCategories(id: any){
+    const endPoint = `${base_uri}/categories/${id}`
+    return this.http.delete(endPoint)
+  }
+
  
 }
