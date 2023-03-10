@@ -6,7 +6,7 @@
                 <mat-label>
                     Buscar categorías
                 </mat-label>
-                <input matInput #input>
+                <input matInput #input (keyup)="buscar(input.value)">
             </mat-form-field>
         </div>
     </mat-card-header>
