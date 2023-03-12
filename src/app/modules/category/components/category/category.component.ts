@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
 import { MatSnackBar, MatSnackBarRef, SimpleSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { ConfirmComponent } from 'src/app/modules/shared/components/confirm/confirm.component';
@@ -17,6 +18,8 @@ export class CategoryComponent implements OnInit{
     ){
 
   }
+  @ViewChild(MatPaginator)
+  paginator!: MatPaginator;
   //metodo de carga
   ngOnInit(): void {
     this.getCategories();
@@ -44,9 +47,8 @@ export class CategoryComponent implements OnInit{
             dataCategory.push(element)
             console.log("introdujo")
       });
-      console.log("antes de introducir")
       this.dataSource=new MatTableDataSource<CategoryElement>(dataCategory)
-      console.log("despues de introducir")
+      this.dataSource.paginator
     }
    // console.log(this.dataSource)
 
