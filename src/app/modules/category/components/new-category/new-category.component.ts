@@ -15,6 +15,7 @@ export class NewCategoryComponent implements OnInit {
   constructor(private fb: FormBuilder,
     private categoryService: CategoryService,
     private dialogRef: MatDialogRef<NewCategoryComponent>,
+    
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.actionType="Crear una nueva categoría"

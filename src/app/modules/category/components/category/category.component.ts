@@ -7,7 +7,7 @@ import { ConfirmComponent } from 'src/app/modules/shared/components/confirm/conf
 import { CategoryService } from 'src/app/modules/shared/services/category.service';
 import { NewCategoryComponent } from '../new-category/new-category.component';
 
-@Component({
+@Component({ 
   selector: 'app-category',
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.css']
@@ -89,7 +89,7 @@ export class CategoryComponent implements OnInit{
   delete(id:number){
     const dialogRef = this.dialog.open(ConfirmComponent,{
       
-      data: {id: id}
+      data: {id: id, module: "category"}
     });
     dialogRef.afterClosed().subscribe((result:any)=>{
       if(result == 1){

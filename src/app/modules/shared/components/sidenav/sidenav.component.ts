@@ -10,7 +10,7 @@ export class SidenavComponent {
 
   menuNav = [{ name: "Home", route: "home", icon: "home" },
   { name: "Categories", route: "category", icon: "category" },
-  { name: "Productos", route: "products", icon: "production_quantity_limits" }]
+  { name: "Productos", route: "product", icon: "production_quantity_limits" }]
 
   mobileQuery: MediaQueryList;
   constructor(media: MediaMatcher) {
