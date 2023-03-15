@@ -61,7 +61,7 @@ export class NewProductComponent implements OnInit {
 
   onSave() {
     let data = {
-      name: this.productForm.get("number")?.value,
+      name: this.productForm.get("name")?.value,
       price: this.productForm.get("price")?.value,
       account: this.productForm.get("account")?.value,
       category: this.productForm.get("category")?.value,

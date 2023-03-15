@@ -53,7 +53,14 @@ export class ProductComponent implements OnInit {
       this.dataSource.paginator = this.paginator
     }
   }
-  buscar(id: string){
+  buscar(name: any){
+    if(name.length===0){
+      return this.getProducts()
+    }
+    this.productService.getProductsByName(name)
+    .subscribe((data: any)=>{
+      this.processProductResponse(data)
+    })
 
   }
   delete(id: number){
