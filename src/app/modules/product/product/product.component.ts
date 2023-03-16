@@ -6,6 +6,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { ConfirmComponent } from '../../shared/components/confirm/confirm.component';
 import { ProductService } from '../../shared/services/product.service';
+import { UtilService } from '../../shared/services/util.service';
 import { NewProductComponent } from '../new-product/new-product.component';
 
 @Component({
@@ -14,15 +15,17 @@ import { NewProductComponent } from '../new-product/new-product.component';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
+  isAdmin: any
   constructor(private productService: ProductService,
-    public dialog: MatDialog, private openSnackBar: MatSnackBar){
-
+    public dialog: MatDialog, private openSnackBar: MatSnackBar,
+    private util: UtilService ){
   }
 
 
 
   ngOnInit(): void {
       this.getProducts()
+    //  this.isAdmin=this.util.isAdmin()
   }
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
